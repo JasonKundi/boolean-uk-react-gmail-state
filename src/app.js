@@ -1,12 +1,14 @@
-import Header from './components/header'
+import Header from "./components/header";
+import { useState } from "react";
 
-import initialEmails from './data/emails'
+import initialEmails from "./data/emails";
 
-import './styles/app.css'
+import "./styles/app.css";
 
 function App() {
   // Use initialEmails for state
-  console.log(initialEmails)
+  const [emailList, setEmailList] = useState(initialEmails);
+  console.log(initialEmails);
 
   return (
     <div className="app">
@@ -39,9 +41,33 @@ function App() {
           </li>
         </ul>
       </nav>
-      <main className="emails">{/* Render a list of emails here */}</main>
+      <main className="emails">
+        {emailList.map(function (email) {
+          console.log(email);
+          return (
+            <li className="email">
+              <div className="select">
+                <input className="select-checkbox" type="checkbox" />
+              </div>
+              <div className="star">
+                <input className="star-checkbox" type="checkbox" /> {}
+              </div>
+              <div className="sender">{email.sender}</div>
+              <div className="title">{email.title}</div>
+            </li>
+          );
+        })}
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+//{
+//  id: 1,
+//  sender: `Zoom`,
+//  title: `Cloud Recording - Nicolas Marcora's Personal Meeting Room is now available`,
+//  starred: false,
+//  read: true
+//},
+
+export default App;

@@ -19,9 +19,7 @@ You'll use state's `set` function to modify data and render the new changes.
 
 - Set state using `useState` and `intialEmails`
 - Render a list of emails from state so it looks similar to the screenshot that comes with this message
-- Create a `toggleRead` function that updates the target email's **read** property in state, when a user clicks on the checkbox
-- Create a `toggleStar` function that updates the target email's **starred** property in state, when a user clicks on the star
-- Make sure these changes take effect in the UI
+
 
 ## Tips
 
@@ -31,6 +29,10 @@ You'll use state's `set` function to modify data and render the new changes.
 - Remember to use the `key` attribute when rendering lists in react
 
 ## Extension 1
+
+- Create a `toggleRead` function that updates the target email's **read** property in state, when a user clicks on the checkbox
+- Create a `toggleStar` function that updates the target email's **starred** property in state, when a user clicks on the star
+- Make sure these changes take effect in the UI
 
 - Get the **Hide Read** checkbox to work in the `left-menu` section. You'll need to use state to keep track of the changes and you'll need a function to filter the emails before they are rendered ie. `getReadEmails(emails)`
 
