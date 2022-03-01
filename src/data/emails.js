@@ -33,5 +33,12 @@ export default [
     title: `Updated invitation: Coding chat with Nico`,
     starred: true,
     read: false
+  },
+  {
+    id: 6,
+    sender: `Devonte`,
+    title: `Bro the new Kanye doc on netflix is fire`,
+    starred: true,
+    read: false
   }
 ]

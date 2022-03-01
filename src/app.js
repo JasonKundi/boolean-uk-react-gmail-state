@@ -10,6 +10,24 @@ function App() {
   const [emailList, setEmailList] = useState(initialEmails);
   console.log(initialEmails);
 
+  const toggleRead = (email) => {
+    console.log(email)
+    const updatedEmails = emails.map((emailElement) => {
+      if (emailElement === email) {
+        const updatedEmail = {...email}
+        updatedEmail.read = !updatedEmail.read
+        return updatedEmail
+      } else {
+        return emailElement
+      }
+    })
+    setEmailList(updatedEmails)
+
+  }
+
+  //- Create a `toggleRead` function that updates the target email's **read** 
+  //property in state, when a user clicks on the checkbox
+
   return (
     <div className="app">
       <Header />
@@ -43,14 +61,24 @@ function App() {
       </nav>
       <main className="emails">
         {emailList.map(function (email) {
+          
+          let emailClass = 'email '
+          if (email.read) {
+            emailClass += 'read'
+          } else {
+            emailClass += 'unread'
+          }
           console.log(email);
           return (
-            <li className="email">
+            <li className={emailClass}>
               <div className="select">
-                <input className="select-checkbox" type="checkbox" />
+                <input className="select-checkbox"
+                checked = {email.read}
+                onClick = {() => toggleRead(email)} 
+                type="checkbox" />
               </div>
               <div className="star">
-                <input className="star-checkbox" type="checkbox" /> {}
+                <input className="star-checkbox" type="checkbox" checked = {email.starred} /> 
               </div>
               <div className="sender">{email.sender}</div>
               <div className="title">{email.title}</div>
