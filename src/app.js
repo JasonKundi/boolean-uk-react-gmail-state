@@ -12,7 +12,7 @@ function App() {
 
   const toggleRead = (email) => {
     console.log(email)
-    const updatedEmails = emails.map((emailElement) => {
+    const updatedEmails = email.map((emailElement) => {
       if (emailElement === email) {
         const updatedEmail = {...email}
         updatedEmail.read = !updatedEmail.read
